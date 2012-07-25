@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'commander/import'
+#require 'pine'
+
+program :name, 'Pine'
+program :version, '0.0.1'
+program :description, 'Pine.io Powertool'
+
+command :login, do |c|
+  c.syntax = 'pine login, [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Pine::Commands::Init,
+    ask("Password:  ") { |q| q.echo = "*" }
+  end
+end
+
+command :init, do |c|
+  c.syntax = 'pine init, [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Pine::Commands::Init,
+    system 'git clone https://github.com/scottraio/badass-bootstrap.git'
+  end
+end
+
+command :deploy, do |c|
+  c.syntax = 'pine deploy, [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Pine::Commands::Deploy,
+  end
+end
+
+command :start, do |c|
+  c.syntax = 'pine start, [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Pine::Commands::Start,
+  end
+end
+
+command :stop do |c|
+  c.syntax = 'pine stop [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Pine::Commands::Stop
+  end
+end
+
